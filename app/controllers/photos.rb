@@ -18,4 +18,10 @@ namespace '/photos' do
       end
     end
 
+    get "/:id" do
+      @photo = Photo.find(params[:id])
+
+      erb :'/photos/view_one'
+    end
+
 end
