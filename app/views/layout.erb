@@ -15,16 +15,16 @@
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Flicked</title>
 
   <div id='cssmenu'>
 <ul>
    <li><a href='/'><span>Home</span></a></li>
-   <li><a href='/posts/new'><span>Add new post</span></a></li>
    <% if login? %>
-   <%id = User.find_by(username: session[:username])%>
-   <li><a href="/users/<%=id.id%>"><span>My profile</span></a></li>
-   <li><a href ="/logout"> Logout </a></li>
+   <%user = User.find(session[:id])%>
+   <li><a href="/users/<%=user.id%>"><span>My profile</span></a></li>
+   <li><a href ="/users/logout"> Logout </a></li>
+   <li><a href='/photos/upload'><span>Add new photo</span></a></li>
    <%else%>
    <li><a href='/users/login'><span>Login</span></a></li>
     <li><a href='/users/create'><span>Sign up</span></a></li>
