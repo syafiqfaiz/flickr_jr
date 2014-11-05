@@ -17,7 +17,7 @@ end
 
 
 get '/' do
-  # @photos = Photo.last(9)
+  @photos = Photo.last(9)
   # @albums = Album.last(6)
   erb :index
 end
