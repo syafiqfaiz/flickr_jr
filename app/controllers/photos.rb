@@ -3,7 +3,7 @@ namespace '/photos' do
   get '/upload' do
     @user = User.find(session[:id])
     @albums = @user.albums
-    erb :'/photos/upload'
+    erb :'/photos/upload_photo'
   end
 
   post '/create' do

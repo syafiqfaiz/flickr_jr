@@ -3,8 +3,15 @@
   <p>Hello, world!</p>
   <table>
     <tr>
+      <%counter = 0%>
       <%@photos.each do |photo| %>
-      <td><img src="<%= photo.source_url %>"></td>
+        <%if counter <= 2%>
+          <td><img src="<%= photo.source_url(:thumb)  %>"></td>
+          <%counter += 1%>
+        <%else%>
+          </tr><tr><td><img src="<%= photo.source_url(:thumb)  %>"></td>
+          <%counter = 0%>
+        <%end%>
       <%end%>
     </tr>
   </table>

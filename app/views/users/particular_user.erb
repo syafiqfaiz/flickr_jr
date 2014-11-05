@@ -3,7 +3,7 @@
   Username : <%=@user.username%><br>
   Email : <%=@user.email%><br>
   Albums : <%@albums.each do |album| %>
-    <%=album.name%><br>
+    <a href="/albums/<%=album.id%>"><%=album.name%></a><br>
   <%end%>
 </div>
 
