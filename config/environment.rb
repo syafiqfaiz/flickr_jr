@@ -29,11 +29,10 @@ APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 
 require 'carrierwave/orm/activerecord'
-Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
 
+Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
 CarrierWave.configure do |config|
-  config.root = "#{APP_ROOT}/public"
-  config.store_dir = "#{config.root}/uploads"
+    config.root = APP_ROOT + 'public/'
 end
 
 # Set up the controllers and helpers

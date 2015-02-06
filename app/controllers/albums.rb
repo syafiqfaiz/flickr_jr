@@ -21,7 +21,7 @@ namespace '/albums' do
 
 
   get '/:album_id/photos/:photo_id' do
-    @photo = Photo.find(params[:photo_id])
+    @photo = Photo.find(params[:photo_id]).thumb
 
     erb :'photos/view_one'
   end

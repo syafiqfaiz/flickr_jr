@@ -1,9 +1,9 @@
 class CreatePhotos < ActiveRecord::Migration
   def change
     create_table :photos do |t|
-      t.string :name
-      t.string :source
-      t.integer :album_id
+      t.belongs_to :album
+      t.string :file
+
 
       t.timestamp
     end
