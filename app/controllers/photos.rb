@@ -7,7 +7,6 @@ namespace '/photos' do
   end
 
   post '/create' do
-    p "=================before create========="
     album = Album.find(params[:album_id])
     @photo = album.photos.build
     @photo.file = params[:file_path]

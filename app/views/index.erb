@@ -6,10 +6,10 @@
       <%counter = 0%>
       <%@photos.each do |photo| %>
         <%if counter <= 2%>
-          <td><a href="/photos/<%=photo.id%>"><img src="<%= photo.source_url(:thumb)  %>"></a></td>
+          <td><a href="/photos/<%=photo.id%>"><img src="<%= photo.file  %>"></a></td>
           <%counter += 1%>
         <%else%>
-          </tr><tr><td><a href="/photos/<%=photo.id%>"><img src="<%= photo.source_url(:thumb)  %>"></a></td>
+          </tr><tr><td><a href="/photos/<%=photo.id%>"><img src="<%= photo.file  %>"></a></td>
           <%counter = 0%>
         <%end%>
       <%end%>
